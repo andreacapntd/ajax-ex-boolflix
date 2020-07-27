@@ -41,6 +41,7 @@ function filmSearch() {
       var filmsResults = data['results'];
 
       for (var i = 0; i < filmsResults.length; i++) {
+
         var films = filmsResults[i];
         var filmTitle = films['title'];
         var filmOriginalTitle = films['original_title'];
@@ -68,9 +69,7 @@ function filmSearch() {
 
     }
 
-
-  })
-
+  });
 
 };
 
@@ -88,29 +87,11 @@ function filmSearch() {
 
 
 
-function test() {
-
-
-  button.click(function(){
-
-    var inputValue = inputTarget.val();
-    console.log(inputValue);
-  })
-}
-
-
-
-
-
-
-
-
 function init() {
 
   addListenerStartFilmSearch();
 
-  // test ();
-}
+};
 
 
 

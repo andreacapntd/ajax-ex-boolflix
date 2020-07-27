@@ -8,12 +8,45 @@
 
 }
 
-
-
 /* debug */
 
-body {
+.input_container {
 
-  background-color: coral;
-  
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+
+}
+
+input {
+
+  height: 50px;
+  font-size: 20px;
+  padding: 0 10px;
+  border-radius: 25px;
+  outline: none;
+
+}
+
+button {
+
+  margin-left: 10px;
+  width: 80px;
+  font-style: italic;
+  border-radius: 20px;
+  font-size: 15px;
+
+}
+
+li {
+
+  line-height: 35px;
+  font-size: 20px;
+
+}
+
+span {
+
+  color: red;
+
 }
