@@ -1,10 +1,21 @@
 function  addListenerStartFilmSearch() {
 
+  var inputTarget = $('#search');
   var button = $('#btn');
 
   button.click(filmSearch);
+  inputTarget.keyup(function() {
+
+    if ( event.which == 13 ) {
+
+      filmSearch();
+
+    }
+
+  });
 
 };
+
 
 function filmSearch() {
 
