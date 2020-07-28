@@ -37,25 +37,16 @@ function filmSearch() {
     },
     success: function(data) {
 
-      var success = data['success'];
       var filmsResults = data['results'];
 
       for (var i = 0; i < filmsResults.length; i++) {
 
         var films = filmsResults[i];
-        var filmTitle = films['title'];
-        var filmOriginalTitle = films['original_title'];
-        var filmLanguage = films['original_language'];
-        var filmRate = films['vote_average'];
+        films.vote_average= Math.round(films.vote_average / 2);
+        var filmsHtml = compiled(films);
 
-        var filmsHtml = compiled({
 
-          'title': filmTitle,
-          'originalTitle': filmOriginalTitle,
-          'language': filmLanguage,
-          'rate': filmRate
 
-        })
 
         inputTarget.val('');
         filmsTarget.append(filmsHtml);
