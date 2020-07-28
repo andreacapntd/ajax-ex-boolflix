@@ -9,6 +9,7 @@ function  addListenerStartFilmSearch() {
     tvSeriesSearch();
 
   });
+  
   inputTarget.keyup(function() {
 
     if ( event.which == 13 ) {
@@ -19,7 +20,6 @@ function  addListenerStartFilmSearch() {
     }
 
   });
-
 };
 
 
@@ -40,6 +40,7 @@ function filmSearch() {
     data: {
 
       'query': inputTarget.val()
+
     },
     success: function(data) {
 
@@ -53,12 +54,6 @@ function filmSearch() {
 
         var language = films.original_language;
         films.original_language = getFlagLanguage(language);
-
-
-
-
-
-
 
         var filmsHtml = compiled(films);
         inputTarget.val('');
@@ -74,7 +69,6 @@ function filmSearch() {
     }
 
   });
-
 };
 
 function tvSeriesSearch() {
@@ -94,6 +88,7 @@ function tvSeriesSearch() {
     data: {
 
       'query': inputTarget.val()
+
     },
     success: function(data) {
 
@@ -107,12 +102,6 @@ function tvSeriesSearch() {
 
         var language = tvSeries.original_language;
         tvSeries.original_language = getFlagLanguage(language);
-
-
-
-
-
-
 
         var tvSeriesHtml = compiled(tvSeries);
         inputTarget.val('');
@@ -128,8 +117,6 @@ function tvSeriesSearch() {
     }
 
   });
-
-
 }
 
 function getRateStars(rate) {
@@ -163,21 +150,16 @@ function getFlagLanguage(language) {
   if (languages.includes(language)) {
 
     flag = "<img src='img/" + language + ".png'>";
+
   } else {
 
     flag = language;
+
   }
 
   return flag;
+
 }
-
-
-
-
-
-
-
-
 
 
 
