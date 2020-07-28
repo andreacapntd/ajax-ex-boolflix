@@ -19,6 +19,17 @@
 
     </script>
 
+    <script id="tv_series_template" type="text/x-handlebars-template">
+
+      <li id="tv_serie">
+        <span>Titolo:</span> {{name}}
+        <span>Titolo originale:</span> {{original_name}}
+        <span>Lingua:</span> {{{original_language}}}
+        <span>Voto:</span> {{{vote_average}}}
+      </li>
+
+    </script>
+
   </head>
   <body>
 
@@ -29,10 +40,24 @@
 
     </div>
 
-    <ul id="films">
+    <div class="films_container">
+
+      <h1>Films:</h1>
+      <ul id="films">
 
 
-    </ul>
+      </ul>
+
+    </div>
+
+    <div class="serie_container">
+
+      <h1>Serie tv:</h1>
+      <ul id="tv_series">
+
+      </ul>
+
+    </div>
 
 
 

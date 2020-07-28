@@ -3,12 +3,18 @@ function  addListenerStartFilmSearch() {
   var inputTarget = $('#search');
   var button = $('#btn');
 
-  button.click(filmSearch);
+  button.click(function(){
+
+    filmSearch();
+    tvSeriesSearch();
+
+  });
   inputTarget.keyup(function() {
 
     if ( event.which == 13 ) {
 
       filmSearch();
+      tvSeriesSearch();
 
     }
 
@@ -71,6 +77,61 @@ function filmSearch() {
 
 };
 
+function tvSeriesSearch() {
+
+  var inputTarget = $('#search');
+
+  var template = $('#tv_series_template').html();
+  var compiled = Handlebars.compile(template);
+  var tvSeriesTarget = $('#tv_series');
+
+  tvSeriesTarget.html('');
+
+  $.ajax({
+
+    url:'https://api.themoviedb.org/3/search/tv?api_key=f8286655b8fe2d5049fce0ac4760805f&language=it-IT',
+    method: 'GET',
+    data: {
+
+      'query': inputTarget.val()
+    },
+    success: function(data) {
+
+      var tvSeriesResults = data['results'];
+
+      for (var i = 0; i < tvSeriesResults.length; i++) {
+
+        var tvSeries = tvSeriesResults[i];
+        var rate = tvSeries.vote_average;
+        tvSeries.vote_average = getRateStars(rate);
+
+        var language = tvSeries.original_language;
+        tvSeries.original_language = getFlagLanguage(language);
+
+
+
+
+
+
+
+        var tvSeriesHtml = compiled(tvSeries);
+        inputTarget.val('');
+        tvSeriesTarget.append(tvSeriesHtml);
+
+      }
+
+    },
+    error: function(err) {
+
+      console.log('err', err);
+
+    }
+
+  });
+
+
+}
+
 function getRateStars(rate) {
 
   var rateIntegerStar = Math.round(rate /2);
@@ -106,7 +167,7 @@ function getFlagLanguage(language) {
 
     flag = language;
   }
-  
+
   return flag;
 }
 
