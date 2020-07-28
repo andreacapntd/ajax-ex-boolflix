@@ -80,7 +80,7 @@ function getRateStars(rate) {
 
     if(i <= rateIntegerStar) {
 
-      rateStar += '<i class="fas fa-star"></i>';
+      rateStar += '<i class="fas fa-star stars"></i>';
 
     } else {
 
