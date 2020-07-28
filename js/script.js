@@ -45,8 +45,8 @@ function filmSearch() {
         var rate = films.vote_average;
         films.vote_average = getRateStars(rate);
 
-
-
+        var language = films.original_language;
+        films.original_language = getFlagLanguage(language);
 
 
 
@@ -93,7 +93,22 @@ function getRateStars(rate) {
 
 }
 
+function getFlagLanguage(language) {
 
+  var languages = ['it', 'en', 'fr', 'ja','es'];
+
+  var flag = '';
+
+  if (languages.includes(language)) {
+
+    flag = "<img src='img/" + language + ".png'>";
+  } else {
+
+    flag = language;
+  }
+  
+  return flag;
+}
 
 
 
