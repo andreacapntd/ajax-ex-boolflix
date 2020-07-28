@@ -42,12 +42,19 @@ function filmSearch() {
       for (var i = 0; i < filmsResults.length; i++) {
 
         var films = filmsResults[i];
-        films.vote_average= Math.round(films.vote_average / 2);
+        var rate = films.vote_average;
+        films.vote_average = getRateStars(rate);
+
+
+
+
+
+
+
+
+
+
         var filmsHtml = compiled(films);
-
-
-
-
         inputTarget.val('');
         filmsTarget.append(filmsHtml);
 
@@ -64,7 +71,27 @@ function filmSearch() {
 
 };
 
+function getRateStars(rate) {
 
+  var rateIntegerStar = Math.round(rate /2);
+  var rateStar = '';
+
+  for (var i = 1; i <= 5; i++) {
+
+    if(i <= rateIntegerStar) {
+
+      rateStar += '<i class="fas fa-star"></i>';
+
+    } else {
+
+      rateStar += '<i class="far fa-star"></i>';
+
+    }
+  }
+
+  return rateStar;
+
+}
 
 
 
