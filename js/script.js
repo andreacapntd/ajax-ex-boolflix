@@ -9,7 +9,7 @@ function  addListenerStartFilmSearch() {
     tvSeriesSearch();
 
   });
-  
+
   inputTarget.keyup(function() {
 
     if ( event.which == 13 ) {
@@ -29,7 +29,7 @@ function filmSearch() {
 
   var template = $('#film_template').html();
   var compiled = Handlebars.compile(template);
-  var filmsTarget = $('#films');
+  var filmsTarget = $('#films ul');
 
   filmsTarget.html('');
 
@@ -55,6 +55,8 @@ function filmSearch() {
         var language = films.original_language;
         films.original_language = getFlagLanguage(language);
 
+        films.poster_path = "<img  src='https://image.tmdb.org/t/p/w185" + films.poster_path + "'alt='Immagine non disponibile'>";
+
         var filmsHtml = compiled(films);
         inputTarget.val('');
         filmsTarget.append(filmsHtml);
@@ -77,7 +79,7 @@ function tvSeriesSearch() {
 
   var template = $('#tv_series_template').html();
   var compiled = Handlebars.compile(template);
-  var tvSeriesTarget = $('#tv_series');
+  var tvSeriesTarget = $('#tv_series ul');
 
   tvSeriesTarget.html('');
 
@@ -102,6 +104,9 @@ function tvSeriesSearch() {
 
         var language = tvSeries.original_language;
         tvSeries.original_language = getFlagLanguage(language);
+
+        tvSeries.poster_path = "<img  src='https://image.tmdb.org/t/p/w185" + tvSeries.poster_path + "' alt='Immagine non disponibile'>";
+
 
         var tvSeriesHtml = compiled(tvSeries);
         inputTarget.val('');
@@ -149,7 +154,7 @@ function getFlagLanguage(language) {
 
   if (languages.includes(language)) {
 
-    flag = "<img src='img/" + language + ".png'>";
+    flag = "<img id = 'language_flag' src='img/" + language + ".png'>";
 
   } else {
 

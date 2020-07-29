@@ -18,6 +18,7 @@
 
 }
 
+
 input {
 
   height: 50px;
@@ -57,8 +58,8 @@ span {
 
 }
 
-img {
+img#language_flag {
 
   height: 20px;
-  
+
 }

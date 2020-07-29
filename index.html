@@ -11,6 +11,7 @@
     <script id="film_template" type="text/x-handlebars-template">
 
       <li id="film">
+        {{{poster_path}}}
         <span>Titolo:</span> {{title}}
         <span>Titolo originale:</span> {{original_title}}
         <span>Lingua:</span> {{{original_language}}}
@@ -22,6 +23,7 @@
     <script id="tv_series_template" type="text/x-handlebars-template">
 
       <li id="tv_serie">
+        {{{poster_path}}}
         <span>Titolo:</span> {{name}}
         <span>Titolo originale:</span> {{original_name}}
         <span>Lingua:</span> {{{original_language}}}
@@ -40,20 +42,20 @@
 
     </div>
 
-    <div class="films_container">
+    <div id="films" class="films_container">
 
       <h1>Films:</h1>
-      <ul id="films">
+      <ul >
 
 
       </ul>
 
     </div>
 
-    <div class="serie_container">
+    <div id="tv_series" class="serie_container">
 
       <h1>Serie tv:</h1>
-      <ul id="tv_series">
+      <ul >
 
       </ul>
 
