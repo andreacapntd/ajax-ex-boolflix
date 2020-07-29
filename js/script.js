@@ -27,11 +27,7 @@ function filmSearch() {
 
   var inputTarget = $('#search');
 
-  var template = $('#film_template').html();
-  var compiled = Handlebars.compile(template);
-  var filmsTarget = $('#films ul');
 
-  filmsTarget.html('');
 
   $.ajax({
 
@@ -46,6 +42,12 @@ function filmSearch() {
 
       var filmsResults = data['results'];
 
+      var template = $('#film_template').html();
+      var compiled = Handlebars.compile(template);
+      var filmsTarget = $('#films_results');
+
+      filmsTarget.html('');
+
       for (var i = 0; i < filmsResults.length; i++) {
 
         var films = filmsResults[i];
@@ -55,7 +57,7 @@ function filmSearch() {
         var language = films.original_language;
         films.original_language = getFlagLanguage(language);
 
-        films.poster_path = "<img  src='https://image.tmdb.org/t/p/w185" + films.poster_path + "'alt='Immagine non disponibile'>";
+        films.poster_path = "<img  src='https://image.tmdb.org/t/p/w342" + films.poster_path + "'alt='Immagine non disponibile'>";
 
         var filmsHtml = compiled(films);
         inputTarget.val('');
@@ -77,12 +79,6 @@ function tvSeriesSearch() {
 
   var inputTarget = $('#search');
 
-  var template = $('#tv_series_template').html();
-  var compiled = Handlebars.compile(template);
-  var tvSeriesTarget = $('#tv_series ul');
-
-  tvSeriesTarget.html('');
-
   $.ajax({
 
     url:'https://api.themoviedb.org/3/search/tv?api_key=f8286655b8fe2d5049fce0ac4760805f&language=it-IT',
@@ -96,6 +92,12 @@ function tvSeriesSearch() {
 
       var tvSeriesResults = data['results'];
 
+      var template = $('#tv_series_template').html();
+      var compiled = Handlebars.compile(template);
+      var tvSeriesTarget = $('#series_results');
+
+      tvSeriesTarget.html('');
+
       for (var i = 0; i < tvSeriesResults.length; i++) {
 
         var tvSeries = tvSeriesResults[i];
@@ -105,7 +107,7 @@ function tvSeriesSearch() {
         var language = tvSeries.original_language;
         tvSeries.original_language = getFlagLanguage(language);
 
-        tvSeries.poster_path = "<img  src='https://image.tmdb.org/t/p/w185" + tvSeries.poster_path + "' alt='Immagine non disponibile'>";
+        tvSeries.poster_path = "<img  src='https://image.tmdb.org/t/p/w342" + tvSeries.poster_path + "' alt='Immagine non disponibile'>";
 
 
         var tvSeriesHtml = compiled(tvSeries);

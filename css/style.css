@@ -10,7 +10,7 @@
 
 /* debug */
 
-.input_container {
+/* .input_container {
 
   display: flex;
   justify-content: center;
@@ -59,6 +59,31 @@ span {
 }
 
 img#language_flag {
+
+  height: 20px;
+
+} */
+
+#films_card, #tv_series_card {
+
+  float: left;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 400px;
+  width: 300px;
+
+}
+
+
+#films_card li , #tv_series_card li {
+
+  list-style-type: none;
+
+}
+
+#films_card li img, #tv_series_card li img {
 
   height: 20px;
 
