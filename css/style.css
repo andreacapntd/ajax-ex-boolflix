@@ -19,25 +19,9 @@
 }
 
 
-input {
 
-  height: 50px;
-  font-size: 20px;
-  padding: 0 10px;
-  border-radius: 25px;
-  outline: none;
 
-}
 
-button {
-
-  margin-left: 10px;
-  width: 80px;
-  font-style: italic;
-  border-radius: 20px;
-  font-size: 15px;
-
-}
 
 li {
 
@@ -63,16 +47,91 @@ img#language_flag {
   height: 20px;
 
 } */
+header {
+
+  display: flex;
+  align-items: center;
+
+  height: 70px;
+  width: 100%;
+  padding: 0 10px;
+
+  background-color: black;
+
+}
+
+
+header .logo {
+
+
+
+  width: 50%;
+
+}
+
+header .logo h1 {
+
+  color: red;
+
+}
+
+header .input_container {
+
+  display: flex;
+  justify-content: flex-end;
+
+  width: 50%;
+
+}
+
+header .input_container #search {
+
+  height: 50px;
+  font-size: 20px;
+  padding: 0 10px;
+  border-radius: 25px;
+  outline: none;
+
+}
+
+header .input_container #btn {
+
+  margin-left: 10px;
+  width: 80px;
+  font-style: italic;
+  border-radius: 20px;
+  font-size: 15px;
+
+}
+
+.wrapper {
+
+  height: 100vh;
+  width: 100%;
+
+}
+
+.films_results, .series_results {
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+
+  width: 100%;
+
+}
 
 #films_card, #tv_series_card {
-
-  float: left;
 
   display: flex;
   flex-direction: column;
 
-  height: 400px;
-  width: 300px;
+  height: 513px;
+  width: 342px;
+  margin: 15px;
+
+  cursor: pointer;
 
 }
 
@@ -87,4 +146,8 @@ img#language_flag {
 
   height: 20px;
 
+}
+
+.info {
+  display: none;
 }

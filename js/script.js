@@ -57,7 +57,7 @@ function filmSearch() {
         var language = films.original_language;
         films.original_language = getFlagLanguage(language);
 
-        films.poster_path = "<img  src='https://image.tmdb.org/t/p/w342" + films.poster_path + "'alt='Immagine non disponibile'>";
+        films.poster_path = "<img  src='https://image.tmdb.org/t/p/w342" + films.poster_path + "'alt='" + films.title + "'>";
 
         var filmsHtml = compiled(films);
         inputTarget.val('');
@@ -107,7 +107,7 @@ function tvSeriesSearch() {
         var language = tvSeries.original_language;
         tvSeries.original_language = getFlagLanguage(language);
 
-        tvSeries.poster_path = "<img  src='https://image.tmdb.org/t/p/w342" + tvSeries.poster_path + "' alt='Immagine non disponibile'>";
+        tvSeries.poster_path = "<img  src='https://image.tmdb.org/t/p/w342" + tvSeries.poster_path + "' alt='" + tvSeries.name + "'>";
 
 
         var tvSeriesHtml = compiled(tvSeries);

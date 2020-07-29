@@ -11,76 +11,103 @@
     <script id="film_template" type="text/x-handlebars-template">
 
       <div id="films_card">
-        
-        <h4>Film</h4>
 
-        <ul>
-          <li>
-            <span>Titolo:</span> {{title}}
-          </li>
-          <li>
-            <span>Titolo originale:</span> {{original_title}}
-          </li>
-          <li>
-            <span>Lingua:</span> {{{original_language}}}
-          </li>
-          <li>
-            <span>Voto:</span> {{{vote_average}}}
-          </li>
-          <li>
-            <span>Overview:</span> {{overview}}
-          </li>
+        <div class="poster">
+          {{{poster_path}}}
+        </div>
 
-        </ul>
+        <div class="info">
+
+          <h4>Film</h4>
+
+          <ul>
+            <li>
+              <span>Titolo:</span> {{title}}
+            </li>
+            <li>
+              <span>Titolo originale:</span> {{original_title}}
+            </li>
+            <li>
+              <span>Lingua:</span> {{{original_language}}}
+            </li>
+            <li>
+              <span>Voto:</span> {{{vote_average}}}
+            </li>
+            <li>
+              <span>Overview:</span> {{overview}}
+            </li>
+
+          </ul>
+
+        </div>
       </div>
-
     </script>
 
     <script id="tv_series_template" type="text/x-handlebars-template">
 
       <div id="tv_series_card">
 
-        <h4>Serie tv</h4>
-        <ul >
-          <li>
-            <span>Titolo:</span> {{name}}
-          </li>
-          <li>
-            <span>Titolo originale:</span> {{original_name}}
-          </li>
-          <li>
-            <span>Lingua:</span> {{{original_language}}}
-          </li>
-          <li>
-            <span>Voto:</span> {{{vote_average}}}
-          </li>
-          <li>
-            <span>Overview:</span> {{overview}}
-          </li>
+        <div class="poster">
+          {{{poster_path}}}
+        </div>
+
+        <div class="info">
+
+          <h4>Serie tv</h4>
+          <ul >
+            <li>
+              <span>Titolo:</span> {{name}}
+            </li>
+            <li>
+              <span>Titolo originale:</span> {{original_name}}
+            </li>
+            <li>
+              <span>Lingua:</span> {{{original_language}}}
+            </li>
+            <li>
+              <span>Voto:</span> {{{vote_average}}}
+            </li>
+            <li>
+              <span>Overview:</span> {{overview}}
+            </li>
 
 
-        </ul>
+          </ul>
 
+        </div>
       </div>
-
-
     </script>
 
   </head>
   <body>
 
-    <div class="input_container">
+    <div class="wrapper">
 
-      <input id="search" type="text" name="search" value="rocky">
-      <button id="btn" type="button" name="button">Search</button>
+      <header>
+        <div class="logo">
 
-    </div>
+          <h1>Boolflix</h1>
+
+        </div>
+
+        <div class="input_container">
+
+          <input id="search" type="text" name="search" value="rocky">
+          <button id="btn" type="button" name="button">Search</button>
+
+        </div>
+
+      </header>
 
 
-    <div id="films_results" class="films_results">
 
-    </div>
-    <div id="series_results" class="series_results">
+
+      <div id="films_results" class="films_results">
+
+      </div>
+      <div id="series_results" class="series_results">
+
+      </div>
 
     </div>
 
