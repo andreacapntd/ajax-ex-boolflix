@@ -8,45 +8,6 @@
 
 }
 
-/* debug */
-
-/* .input_container {
-
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
-
-}
-
-
-
-
-
-
-li {
-
-  line-height: 35px;
-  font-size: 20px;
-
-}
-
-.stars {
-
-  color: yellow;
-
-}
-
-span {
-
-  color: red;
-
-}
-
-img#language_flag {
-
-  height: 20px;
-
-} */
 .wrapper {
 
   height: 100%;
@@ -115,6 +76,13 @@ header .input_container #btn {
 
 }
 
+main {
+
+  height: 100%;
+  width: 100%;
+
+}
+
 .films_results, .series_results {
 
   display: flex;
@@ -128,8 +96,7 @@ header .input_container #btn {
 
 #films_card, #tv_series_card {
 
-  display: flex;
-  flex-direction: column;
+  position: relative;
 
   height: 513px;
   width: 342px;
@@ -143,23 +110,62 @@ header .input_container #btn {
 
   list-style-type: none;
 
+  margin: 10px 0;
+
 }
 
 #films_card li img, #tv_series_card li img {
 
   height: 20px;
+  width: 20px;
+
+}
+
+.poster img {
+
+  height: 513px;
+  width: 342px;
 
 }
 
 .info {
 
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 
-}
-
-main {
+  position: absolute;
+  top: 0;
 
   height: 100%;
   width: 100%;
+
+  background-color: black;
+  color: white;
+
+  overflow: auto;
+  transition: 1s;
+
+}
+
+#films_card:hover .info, #tv_series_card:hover .info {
+
+
+
+  visibility: visible;
+  opacity: 1;
+
+  transition: 1s;
+
+}
+
+.stars {
+
+  color: yellow;
+
+}
+
+span {
+
+  color: red;
 
 }

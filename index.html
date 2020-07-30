@@ -13,32 +13,34 @@
       <div id="films_card">
 
         <div class="poster">
+
           {{{poster_path}}}
-        </div>
 
-        <div class="info">
+          <div class="info">
 
-          <h4>Film</h4>
+            <h4>Film</h4>
 
-          <ul>
-            <li>
-              <span>Titolo:</span> {{title}}
-            </li>
-            <li>
-              <span>Titolo originale:</span> {{original_title}}
-            </li>
-            <li>
-              <span>Lingua:</span> {{{original_language}}}
-            </li>
-            <li>
-              <span>Voto:</span> {{{vote_average}}}
-            </li>
-            <li>
-              <span>Overview:</span> {{overview}}
-            </li>
+            <ul>
 
-          </ul>
+              <li>
+                <span>Titolo:</span> {{title}}
+              </li>
+              <li>
+                <span>Titolo originale:</span> {{original_title}}
+              </li>
+              <li>
+                <span>Lingua:</span> {{{original_language}}}
+              </li>
+              <li>
+                <span>Voto:</span> {{{vote_average}}}
+              </li>
+              <li>
+                <span>Overview:</span> {{overview}}
+              </li>
 
+            </ul>
+
+          </div>
         </div>
       </div>
     </script>
@@ -48,37 +50,38 @@
       <div id="tv_series_card">
 
         <div class="poster">
+
           {{{poster_path}}}
-        </div>
 
-        <div class="info">
+          <div class="info">
 
-          <h4>Serie tv</h4>
-          <ul >
-            <li>
-              <span>Titolo:</span> {{name}}
-            </li>
-            <li>
-              <span>Titolo originale:</span> {{original_name}}
-            </li>
-            <li>
-              <span>Lingua:</span> {{{original_language}}}
-            </li>
-            <li>
-              <span>Voto:</span> {{{vote_average}}}
-            </li>
-            <li>
-              <span>Overview:</span> {{overview}}
-            </li>
+            <h4>Serie tv</h4>
+            <ul >
 
+              <li>
+                <span>Titolo:</span> {{name}}
+              </li>
+              <li>
+                <span>Titolo originale:</span> {{original_name}}
+              </li>
+              <li>
+                <span>Lingua:</span> {{{original_language}}}
+              </li>
+              <li>
+                <span>Voto:</span> {{{vote_average}}}
+              </li>
+              <li>
+                <span>Overview:</span> {{overview}}
+              </li>
 
-          </ul>
+            </ul>
 
+          </div>
         </div>
       </div>
     </script>
-
   </head>
+
   <body>
 
     <div class="wrapper">
@@ -104,28 +107,15 @@
         <div id="films_results" class="films_results">
 
         </div>
+
         <div id="series_results" class="series_results">
 
         </div>
 
       </main>
 
-
-
-
-
-
     </div>
 
-
-
-
-
-
-
-
-    <script type="text/javascript" src="js/script.js">
-
-    </script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
