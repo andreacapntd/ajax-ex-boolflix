@@ -8,6 +8,8 @@
 
 }
 
+/* MAIN CONTAINER */
+
 .wrapper {
 
   height: 100%;
@@ -16,6 +18,8 @@
   background-color: lightgrey;
 
 }
+
+/* HEADER */
 
 header {
 
@@ -30,10 +34,7 @@ header {
 
 }
 
-
 header .logo {
-
-
 
   width: 50%;
 
@@ -75,6 +76,8 @@ header .input_container #btn {
   font-size: 15px;
 
 }
+
+/* MAIN */
 
 main {
 
@@ -148,8 +151,6 @@ main {
 }
 
 #films_card:hover .info, #tv_series_card:hover .info {
-
-
 
   visibility: visible;
   opacity: 1;
